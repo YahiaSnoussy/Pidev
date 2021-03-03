@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1">
+   <children>
+      <Accordion prefHeight="400.0" prefWidth="600.0">
+        <panes>
+          <TitledPane alignment="CENTER" text="Voir la liste des personnes" underline="true">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </TitledPane>
+          <TitledPane alignment="CENTER" text="Ajouter un personne" underline="true">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>
