@@ -3,41 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package mstore.controller;
 
-import DAO.PersonneDao;
-import Entities.Personne;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.AnchorPane;
-
-
+import mstore.dao.ProductDao;
+import mstore.entity.Product;
 
 /**
  *
- * @author wiemhjiri
+ * @author metal
  */
 public class ListData {
-    
-     /**
-     * The data as an observable list of Persons.
-     */
-    
-    private ObservableList<Personne> persons=FXCollections.observableArrayList();
+    private ObservableList<Product> product=FXCollections.observableArrayList();
 
     public ListData() {
-        
-        PersonneDao pdao=PersonneDao.getInstance();
-        persons= pdao.displayAll();
-        System.out.println(persons);
+        ProductDao pdao=ProductDao.getInstance();
+        product= pdao.displayAll();
+        System.out.println(product);
     }
     
-    public ObservableList<Personne> getPersons(){
-        return persons;
+    public ObservableList<Product> getProduct(){
+        return product;
     }
-   
 }
