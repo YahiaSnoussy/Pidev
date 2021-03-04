@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Hayou/OneDrive/Documents/NetBeansProjects/Mstore/src/Controller/AccueilController.java</file>
-            <file>file:/C:/Users/Hayou/OneDrive/Documents/NetBeansProjects/Mstore/src/Controller/ChartController.java</file>
-            <file>file:/C:/Users/Hayou/OneDrive/Documents/NetBeansProjects/Mstore/src/Controller/ListData.java</file>
-            <file>file:/C:/Users/Hayou/OneDrive/Documents/NetBeansProjects/Mstore/src/mstore/Mstore.java</file>
-            <file>file:/C:/Users/Hayou/OneDrive/Documents/NetBeansProjects/Mstore/src/Controller/AfficherPersonneController.java</file>
-            <file>file:/C:/Users/Hayou/OneDrive/Documents/NetBeansProjects/Mstore/src/Controller/AjouterPersonneController.java</file>
+            <file>file:/C:/Users/metal/OneDrive/Documents/NetBeansProjects/Mstore/src/mstore/entity/Product.java</file>
+            <file>file:/C:/Users/metal/OneDrive/Documents/NetBeansProjects/Mstore/src/mstore/dao/ProductDao.java</file>
+            <file>file:/C:/Users/metal/OneDrive/Documents/NetBeansProjects/Mstore/src/mstore/dao/Idao.java</file>
+            <file>file:/C:/Users/metal/OneDrive/Documents/NetBeansProjects/Mstore/src/mstore/JDBC/Connjdbc.java</file>
         </group>
     </open-files>
 </project-private>
