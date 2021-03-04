@@ -13,9 +13,10 @@ import java.util.List;
 /**
  *
  * @author Hayou
+ * 
  *  
  */
-public interface IPersonne {
+public interface IPersonne<Personne> {
     
   public void insert(Personne p);
     public void delete(Personne p);

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="Controller.AjouterPersonneController">
+    <stylesheets>
+        <URL value="@ajouterpersonne.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="44.0" layoutY="40.0" text="Nom :" />
+      <Label layoutX="44.0" layoutY="77.0" text="Prenom :" />
+      <Label layoutX="44.0" layoutY="116.0" text="Role :" />
+      <Label layoutX="44.0" layoutY="159.0" text="Email : " />
+      <Label layoutX="44.0" layoutY="200.0" text="Password :" />
+      <Label layoutX="44.0" layoutY="245.0" text="Photo de profil :" />
+      <Label layoutX="44.0" layoutY="285.0" text="Numero de telephone :" />
+      <TextField fx:id="nom" layoutX="215.0" layoutY="36.0" />
+      <TextField fx:id="prenom" layoutX="215.0" layoutY="73.0" />
+      <TextField fx:id="role" layoutX="215.0" layoutY="112.0" />
+      <TextField fx:id="email" layoutX="215.0" layoutY="155.0" />
+      <TextField fx:id="password" layoutX="215.0" layoutY="196.0" />
+      <TextField fx:id="photo" layoutX="215.0" layoutY="241.0" />
+      <TextField fx:id="num" layoutX="215.0" layoutY="290.0" />
+      <Button fx:id="btn" layoutX="491.0" layoutY="342.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="86.0" text="Ajouter">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
