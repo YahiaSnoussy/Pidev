@@ -30,7 +30,7 @@ public class Product {
         this.Image = Image;
         this.Label = Label;
         this.Price = Price;
-        this.Date = Date;
+        this.Date = java.util.Calendar.getInstance().getTime();
         this.Type = Type;
         this.Negociation = Negociation;
         this.Description = Description;
@@ -40,6 +40,20 @@ public class Product {
 
 
     public Product() {
+    }
+ 
+    public Product(int ID) {
+        this.ID = new SimpleIntegerProperty(ID) ;
+    }
+    
+    public Product(String Label, String Price, String Image, String Description, String Type, String Negociation) {
+        this.Label = new SimpleStringProperty(Label);
+        this.Image = new SimpleStringProperty(Image);
+        this.Price = new SimpleDoubleProperty(Double.parseDouble(Price));
+        this.Description = new SimpleStringProperty(Description);
+        this.Type = new SimpleStringProperty(Type);
+        this.Negociation = new SimpleStringProperty(Negociation);
+        this.Date = java.util.Calendar.getInstance().getTime();
     }
 
     public int getID() {
