@@ -21,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
+import mstore.dao.ProductDao;
 import mstore.entity.Product;
 
 /**
@@ -76,12 +77,12 @@ public class ListProductController implements Initializable {
         LabelLabel.setText(listdata.getProduct()
                 .get(products.getSelectionModel().getSelectedIndex())
                 .getLabel());
-        PriceLabel.setText(listdata.getProduct()
+        PriceLabel.setText(String.valueOf(listdata.getProduct()
                .get(products.getSelectionModel().getSelectedIndex())
-                .getPrice());
-        DateLabel.setText(listdata.getProduct()
-               .get(products.getSelectionModel().getSelectedIndex())
-                .getDate());
+                .getPrice()));
+        //DateLabel.setText(listdata.getProduct()
+              // .get(products.getSelectionModel().getSelectedIndex())
+             //   .getDate());
         TypeLabel.setText(listdata.getProduct()
                 .get(products.getSelectionModel().getSelectedIndex())
                 .getType());
@@ -110,18 +111,9 @@ public class ListProductController implements Initializable {
         });
         
         Btn_delete.setOnAction(event->{
-            try {
-                System.out.println("testttttttttttttt");
-                Parent pagePieChart=FXMLLoader.load(getClass().getResource("/mstore/view/delete.fxml"));
-                Scene scene=new Scene(pagePieChart);
-                Stage stage=(Stage) ((Node) event.getSource())
-                        .getScene()
-                        .getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException ex) {
-                Logger.getLogger(ListProductController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Product p = new Product(Integer.parseInt(IDLabel.getText()));
+            ProductDao pdao = ProductDao.getInstance();
+            pdao.DeleteProduct(p);
         });
     
 }

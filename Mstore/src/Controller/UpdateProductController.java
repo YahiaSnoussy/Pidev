@@ -13,8 +13,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import mstore.dao.ProductDao;
 import mstore.entity.Product;
 
@@ -23,13 +25,13 @@ import mstore.entity.Product;
  *
  * @author metal
  */
-public class AddProductController implements Initializable {
+public class UpdateProductController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
     @FXML
-    private Button finish;
+    private Button update;
     @FXML
     private TextField LabelText;
     @FXML
@@ -42,14 +44,41 @@ public class AddProductController implements Initializable {
     private CheckBox Type ;
     @FXML
     private RadioButton Negociation ;
+    private ListData listdata = new ListData();
+    @FXML
+    private TableView<Product> products;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        LabelText.setText(listdata.getProduct()
+                .get(products.getSelectionModel().getSelectedIndex())
+                .getLabel());
+        PriceText.setText(String.valueOf(listdata.getProduct()
+               .get(products.getSelectionModel().getSelectedIndex())
+                .getPrice()));
+        Type.setText(listdata.getProduct()
+               .get(products.getSelectionModel().getSelectedIndex())
+                .getType());
+        Negociation.setText(listdata.getProduct()
+                .get(products.getSelectionModel().getSelectedIndex())
+                .getNegociation());
+        DescriptionText.setText(listdata.getProduct()
+                .get(products.getSelectionModel().getSelectedIndex())
+                .getDescription());
+        ImageText.setText(listdata.getProduct()
+                .get(products.getSelectionModel().getSelectedIndex())
+                .getImage());
+        
+        
+        
+        
         // TODO
-        finish.setOnAction(event -> {
+        update.setOnAction(event -> {
             
             Product p = new Product(LabelText.getText(), PriceText.getText(), ImageText.getText(), DescriptionText.getText(), Type.getText(), Negociation.getText());
             ProductDao pdao = ProductDao.getInstance();
-            pdao.AddProduct(p);
+            pdao.UpdateProduct(p);
         
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
