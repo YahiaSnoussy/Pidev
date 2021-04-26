@@ -1,0 +1,9 @@
+vich_uploader:
+    db_driver: orm
+    mappings:
+        actualites:
+            uri_prefix: /images/actualites
+            upload_destination: '%kernel.project_dir%/public/images/actualites'
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
