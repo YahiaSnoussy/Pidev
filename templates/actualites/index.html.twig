@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ActualitesController!{% endblock %}
+
+{% block body %}
+
+    <h1 align="center">Liste des articles</h1>
+    {% for actualite in actualites %}
+
+        <h2><a href="{{ path('actualites_article', {'id': actualite.id}) }}">{{ actualite.titre }}</a></h2>
+        <img src="http://placehold.it/700x600" alt="">
+        <div>{{ actualite.contenu|raw }}</div>
+    {% endfor %}
+    {{ knp_pagination_render(actualites) }}
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Ajout d'un article{% endblock %}
+
+{% block body %}
+
+    <h1>Modification d'un article</h1>
+    {{ include('actualites/_form.html.twig', {'button_label': 'Update'}) }}
+{% endblock %}

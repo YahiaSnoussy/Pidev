@@ -1,0 +1,29 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Actualites{% endblock %}
+
+{% block body %}
+    <h1 align="center">Liste des articles</h1>
+    <table class="table project-table">
+        <thead>
+        <tr class="title">
+            <th>id</th>
+            <th>Titre</th>
+            <th>Contenu</th>
+            <th>Nb Commentaire</th>
+            <th>action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for actualite in actualites %}
+            <tr>
+                <td>{{ actualite.id }}</td>
+                <td>{{ actualite.titre }}</td>
+                <td>{{ actualite.contenu|raw }}</td>
+                <td>{{ actualite.commentaires|length }}</td>
+                <td>{{ include('actualites/_delete_form.html.twig') }} <a href="{{ path('actualites_edit', {'id': actualite.id}) }}">edit</a> </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
