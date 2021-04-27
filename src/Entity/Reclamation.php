@@ -2,59 +2,109 @@
 
 namespace App\Entity;
 
+use App\Repository\ReclamationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Reclamation
- *
- * @ORM\Table(name="reclamation")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=ReclamationRepository::class)
+ * @Orm\Table(name="`reclamation`",indexes={@ORM\Index(columns={"sujet"}, flags={"fulltext"})})
  */
 class Reclamation
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id_rec", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
      */
-    private $idRec;
+    private $id;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="id_user", type="integer", nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
-    private $idUser;
+    private $id_user;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="id_produit", type="integer", nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
-    private $idProduit;
+    private $id_produit;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="message", type="text", length=65535, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $message;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="sujet", type="text", length=65535, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $sujet;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="id_moderateur", type="integer", nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
-    private $idModerateur;
+    private $id_moderateur;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
+    public function getIdUser(): ?int
+    {
+        return $this->id_user;
+    }
+
+    public function setIdUser(?int $id_user): self
+    {
+        $this->id_user = $id_user;
+
+        return $this;
+    }
+
+    public function getIdProduit(): ?int
+    {
+        return $this->id_produit;
+    }
+
+    public function setIdProduit(?int $id_produit): self
+    {
+        $this->id_produit = $id_produit;
+
+        return $this;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(?string $message): self
+    {
+        $this->message = $message;
+
+        return $this;
+    }
+
+    public function getSujet(): ?string
+    {
+        return $this->sujet;
+    }
+
+    public function setSujet(?string $sujet): self
+    {
+        $this->sujet = $sujet;
+
+        return $this;
+    }
+
+    public function getIdModerateur(): ?int
+    {
+        return $this->id_moderateur;
+    }
+
+    public function setIdModerateur(?int $id_moderateur): self
+    {
+        $this->id_moderateur = $id_moderateur;
+
+        return $this;
+    }
 }

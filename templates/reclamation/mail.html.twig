@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}envoyer votre mail ici !{% endblock %}
+
+{% block body %}
+
+    <h1 xmlns:background-color="http://www.w3.org/1999/xhtml">envoyer via mail</h1>
+
+
+                        {{ form_start(formContact) }}
+
+                        <div class="form-control m-5">
+                            {{ form_errors(formContact.email) }}
+                            {{ form_widget(formContact.email) }}
+                        </div>
+
+                        <div class="form-control m-5">
+                            {{ form_widget(formContact.name) }}
+                        </div>
+
+                        <div class="form-control m-5">
+                            {{ form_widget(formContact.description) }}
+                        </div>
+
+                        <div class="form-control m-5">
+                            <button type="submit" class="btn btn-secondary btn-block">Submit</button>
+                        </div>
+                        {{ form_end(formContact) }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="{{ path('reclamation_new') }}">retour</a><br>
+    <a href="{{ path('reclamation_index') }}">retour à votre liste</a>
+{% endblock %}
